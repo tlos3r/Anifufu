@@ -1,0 +1,15 @@
+::-webkit-scrollbar {
+    @apply w-[5px];
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-[#787777];
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-[#ad241b];
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-[#ad4b44];
+}

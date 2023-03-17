@@ -1,0 +1,10 @@
+.float-text {
+    @apply box-border w-full absolute text-lg cursor-text text-[#8c8c8c] left-5 top-1/4;
+    transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease;
+    transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease, -webkit-transform 0.1s ease,
+        -moz-transform 0.1s ease, -o-transform 0.1s ease;
+}
+input:focus ~ .float-text,
+input:valid ~ .float-text {
+    @apply text-xs top-2;
+}

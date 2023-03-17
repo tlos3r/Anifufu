@@ -1,0 +1,16 @@
+.dots-4 {
+    width: 60px;
+    aspect-ratio: 4;
+    background: radial-gradient(circle closest-side at left 6px top 50%, currentColor 90%, #0000),
+        radial-gradient(circle closest-side, currentColor 90%, #0000),
+        radial-gradient(circle closest-side at right 6px top 50%, currentColor 90%, #0000);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    animation: d4 1s infinite alternate;
+}
+@keyframes d4 {
+    to {
+        width: 25px;
+        aspect-ratio: 1;
+    }
+}

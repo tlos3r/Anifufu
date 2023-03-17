@@ -1,0 +1,17 @@
+.slick-dots {
+    bottom: 80px;
+    right: 288px;
+    li.slick-active {
+        span {
+            background-color: #ad241b;
+            border-color: #ad241b;
+        }
+        /* more CSS */
+    }
+}
+
+@media screen and (max-width: 1384px) {
+    .slick-dots {
+        bottom: -25px;
+    }
+}

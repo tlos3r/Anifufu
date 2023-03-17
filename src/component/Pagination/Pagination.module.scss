@@ -1,0 +1,12 @@
+ul.pagination {
+    @apply flex justify-center items-center;
+    li {
+        @apply text-base border-2 border-transparent w-12 h-12 flex justify-center items-center p-1 border-solid  rounded-full hover:bg-[#ad4b44];
+    }
+    li.previous.disabled {
+        display: none;
+    }
+    .selected {
+        @apply bg-[#AD241B] rounded-full cursor-pointer;
+    }
+}

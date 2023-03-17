@@ -1,0 +1,12 @@
+export { default as Login } from "./auth/Login";
+export { default as Register } from "./auth/Register";
+export { default as Forget } from "./auth/Forget";
+export { default as Genres } from "./genres/Genres";
+export { default as SearchPage } from "./search/SearchPage";
+export { default as Home } from "./home/Home";
+export { default as Popular } from "./Popular/Popular";
+export { default as Movie } from "./Movie/Movie";
+export { default as RecentUpdate } from "./RecentUpdate/RecentUpdate";
+export { default as TopAiring } from "./TopAiring/TopAiring";
+export { default as Detais } from "./Details/Details";
+export { default as BookMark } from "./bookmark/BookMark";

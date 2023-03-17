@@ -1,4 +1,4 @@
-# Product Shop Website using ReactJS, Typescript and Firebase
+# Anime Streaming Website using ReactJS, Typescript and Firebase
 
 
 ## Basic setup

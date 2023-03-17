@@ -2,7 +2,7 @@ import axios from "axios";
 
 class Request {
     request = axios.create({
-        baseURL: "http://localhost:3000/",
+        baseURL: "https://gogoanime.consumet.stream/",
     });
 
     async getRecentEpisodes(p?: number, type?: number) {

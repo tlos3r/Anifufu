@@ -6,7 +6,7 @@
 ### Clone this project
 
 ```
-git clone https://github.com/tlos3r/product-shop.git
+git clone https://github.com/tlos3r/Anifufu.git
 ```
 
 ###

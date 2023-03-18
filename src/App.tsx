@@ -4,7 +4,7 @@ import { Footer, Header } from "./component";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Home, Login, Genres, Register, Forget, SearchPage, Popular, Movie, RecentUpdate, BookMark } from "./page";
-import "./App.css";
+import "./App.scss";
 import Details from "./page/Details/Details";
 function App() {
     return (

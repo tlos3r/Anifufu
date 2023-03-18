@@ -37,7 +37,7 @@ function Slide() {
         swipeToSlide: true,
         responsive: [
             {
-                breakpoint: 1413,
+                breakpoint: 1550,
                 settings: {
                     dots: false,
                     slidesToShow: 1,

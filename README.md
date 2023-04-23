@@ -1,6 +1,5 @@
 # Anime Streaming Website using ReactJS, Typescript and Firebase
 
-
 ## Basic setup
 
 ### Clone this project
@@ -22,3 +21,5 @@ npm run dev
 ```
 npm run build
 ```
+
+## Watch demo from [here](https://www.youtube.com/watch?v=dYnc1utloY8).

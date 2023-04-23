@@ -2,12 +2,12 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { AnimeDetails } from "../../models/Anime";
 import request from "../../service/request";
-import LoaderImg from "../../assets/Spinner-1s-267px.gif";
 import { BsBookmarkFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoggedIn } from "../../redux/slice/authSlice";
 import { ADD_BOOKMARK } from "../../redux/slice/bookMarkSlice";
 import { Confirm } from "notiflix";
+import SkeletonLoading from "../../component/loader/SkeletonLoading";
 
 function Details(): JSX.Element {
     const isLoggedIn = useSelector(selectIsLoggedIn);
@@ -56,7 +56,28 @@ function Details(): JSX.Element {
     return (
         <>
             {isLoading ? (
-                <img src={LoaderImg} alt="Loading icon" className="mx-auto" />
+                <section className="container w-5/6 m-32 rounded-xl">
+                    <div className="flex bg-[#070707] m-5 justify-start bg shadow-lg items-center">
+                        <div className="w-1/6 m-5 mx-auto flex flex-col justify-center items-center">
+                            <SkeletonLoading className="w-56 h-64"></SkeletonLoading>
+                            <SkeletonLoading className="w-32 h-12 rounded-lg mt-5"></SkeletonLoading>
+                        </div>
+                        <div className="justify-start w-4/6 pl-10 m-5 text-md">
+                            <SkeletonLoading className="w-72 h-10 my-5 rounded-md"></SkeletonLoading>
+                            <SkeletonLoading className="w-[770px] h-48 my-5 rounded-md"></SkeletonLoading>
+                            {Array(4)
+                                .fill(0)
+                                .map((item, index) => {
+                                    return (
+                                        <SkeletonLoading
+                                            key={index}
+                                            className="w-48 h-3 my-3 rounded-md"
+                                        ></SkeletonLoading>
+                                    );
+                                })}
+                        </div>
+                    </div>
+                </section>
             ) : (
                 <section className="container w-5/6 m-32 rounded-xl">
                     <div className="flex bg-[#070707] m-5 justify-start bg shadow-lg items-center">

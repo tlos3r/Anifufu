@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import Anime from "../../../models/Anime";
 import request from "../../../service/request";
-import LoaderImg from "../../../assets/Spinner-1s-267px.gif";
 import { Link } from "react-router-dom";
 import { AiOutlinePlayCircle } from "react-icons/ai";
 import { shortenText } from "../../../genreList";
 import ViewMoreButton from "../../ViewMoreButton/ViewMoreButton";
+import SkeletonLoading from "../../loader/SkeletonLoading";
 function AnimeMovie() {
     const [listAnimeMovie, setListAnimeMovie] = useState<Anime[]>([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -28,8 +28,17 @@ function AnimeMovie() {
         <>
             <section>
                 <h1 className="py-5 text-4xl font-bold">Anime Movie</h1>
-                {isLoading && <img src={LoaderImg} alt="loader img" />}
                 <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                    {isLoading &&
+                        Array(8)
+                            .fill(0)
+                            .map((item, index) => {
+                                return (
+                                    <div key={index} className="relative w-3/4 m-3 border-4 h-5/6">
+                                        <SkeletonLoading className="w-full h-72"></SkeletonLoading>
+                                    </div>
+                                );
+                            })}
                     {listAnimeMovie &&
                         shortListAnimeMovie.map((listAnime) => {
                             const { animeId, animeTitle, releasedDate, animeImg } = listAnime;

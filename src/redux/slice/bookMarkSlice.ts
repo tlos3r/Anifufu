@@ -22,8 +22,12 @@ const bookMarkSlice = createSlice({
             }
             localStorage.setItem("bookMarkItems", JSON.stringify(state.bookMarkItems));
         },
-        REMOVE_BOOKMARK(state) {
-            console.log(state);
+        REMOVE_BOOKMARK(state, action) {
+            console.log(action.payload);
+            const newAnimeListBookMark = state.bookMarkItems.filter((item: any) => item.animeId !== action.payload);
+            state.bookMarkItems = newAnimeListBookMark;
+            toast.success("Remove anime from bookmark success");
+            localStorage.setItem("bookMarkItems", JSON.stringify(state.bookMarkItems));
         },
     },
 });

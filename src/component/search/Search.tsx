@@ -3,9 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Anime from "../../models/Anime";
 import request from "../../service/request";
-import LoaderImg from "../../assets/Spinner-1s-267px.gif";
 import useDebounce from "../../customHook/useDebounce";
 import SearchResult from "./SearchResult";
+import SkeletonLoading from "../loader/SkeletonLoading";
 function Search() {
     const [searchText, setSearchText] = useState<string>("");
     const [listSearchResult, setListSearchResult] = useState<Anime[]>([]);
@@ -55,7 +55,29 @@ function Search() {
                     }
                     onClick={() => setSearchText("")}
                 >
-                    {isLoading && <img src={LoaderImg} alt="loader img" className="block mx-auto" width={100} />}
+                    {isLoading && (
+                        <ul className="p-3">
+                            {Array(3)
+                                .fill(0)
+                                .map((item, index) => {
+                                    return (
+                                        <>
+                                            <li key={index}>
+                                                <div className="flex items-center justify-start">
+                                                    <div className="w-20">
+                                                        <SkeletonLoading className="w-20 h-32 m-1"></SkeletonLoading>
+                                                    </div>
+                                                    <div className="pl-5">
+                                                        <SkeletonLoading className="w-32 h-3 m-3 rounded-md"></SkeletonLoading>
+                                                        <SkeletonLoading className="w-32 h-3 m-3 rounded-md"></SkeletonLoading>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </>
+                                    );
+                                })}
+                        </ul>
+                    )}
                     <div>
                         {!isLoading && listSearchResult.length <= 0 ? (
                             <p className="font-bold text-md">Don't have anime name that</p>

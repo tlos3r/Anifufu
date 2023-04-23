@@ -28,7 +28,7 @@ function Genres() {
             {isLoading && <Loader />}
             <h1 className="pb-4 text-4xl font-bold text-center">List of {replaceSpeacial(genre as string)}</h1>
             <hr className="h-1 text-gray-700 bg-gray-700 border-0" />
-            <section className="container grid grid-cols-4 mt-4 place-items-center ">
+            <section className="container grid grid-cols-4 mt-4 place-items-center">
                 {listAnimeGenres.length >= 0 &&
                     listAnimeGenres.map((listAnime) => {
                         const { animeId, animeTitle, releasedDate, animeImg } = listAnime;

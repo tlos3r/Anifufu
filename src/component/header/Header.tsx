@@ -94,7 +94,7 @@ const Header = (): JSX.Element => {
                 className={
                     showSideBar
                         ? "inline-block fixed h-full z-10 lg:top-0 lg:z-10 lg:grid lg:w-full lg:h-fit l lg:grid-cols-4 bg-[#0F0F0F] text-center items-center transition-all opacity-100 delay-100"
-                        : "opacity-0 fixed z-10"
+                        : "opacity-0 fixed -z-10"
                 }
             >
                 <div>
@@ -112,7 +112,7 @@ const Header = (): JSX.Element => {
                     <div
                         className={
                             showGenreMenu
-                                ? "absolute grid grid-cols-4 w-fit h-fit bg-black top-24 transition-all delay-150 z-10"
+                                ? "absolute grid grid-cols-4 w-fit h-fit bg-black top-20 transition-all delay-150 z-10"
                                 : "hidden absolute grid-cols-4  h-fit bg-black top-24 transition-all delay-150 z-10"
                         }
                     >
@@ -122,7 +122,7 @@ const Header = (): JSX.Element => {
                                 <Link
                                     to={`/genres/${genre}`}
                                     key={index}
-                                    className="p-2 hover:bg-[#86837E]"
+                                    className="p-3 hover:bg-[#86837E] truncate"
                                     onClick={() => setShowGenreMenu(false)}
                                 >
                                     {replaceSpeacial(genre)}

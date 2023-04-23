@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import "./Slide.scss";
 import request from "../../service/request";
 import Anime from "../../models/Anime";
-import spinnerImg from "../../assets/Spinner-1s-267px.gif";
+import SkeletonLoading from "../loader/SkeletonLoading";
 function Slide() {
     const [listMovies, setListMovies] = useState<Anime[]>([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -49,7 +49,22 @@ function Slide() {
     };
     return (
         <div className="hidden w-4/6 mx-auto my-0 lg:block">
-            {isLoading && <img src={spinnerImg} width={100} className="mx-auto" />}
+            {isLoading && (
+                <div className="container flex items-center justify-center my-10">
+                    <div className="flex flex-row justify-center h-1/2 bg-[#070707] px-5 rounded-3xl border border-solid border-[#070707] ">
+                        <div className="w-2/3 h-full">
+                            <div className="p-10">
+                                <SkeletonLoading className="w-72 h-5 rounded-md my-5"></SkeletonLoading>
+                                <SkeletonLoading className="w-72 h-5 rounded-md my-5"></SkeletonLoading>
+                                <SkeletonLoading className="w-[109px] h-10 rounded-md my-5"></SkeletonLoading>
+                            </div>
+                        </div>
+                        <div className="flex justify-end w-full m-8 overflow-hidden">
+                            <SkeletonLoading className="w-64 h-72 rounded-md my-5"></SkeletonLoading>
+                        </div>
+                    </div>
+                </div>
+            )}
             <Slider {...settings}>
                 {listMovies.map((item, index) => {
                     const { animeImg, animeTitle, animeId, genres } = item;
@@ -58,7 +73,9 @@ function Slide() {
                             <div className="flex flex-row justify-center h-1/2 bg-[#070707] px-5 rounded-3xl border border-solid border-[#070707] ">
                                 <div className="w-2/3 h-full">
                                     <div className="p-10">
-                                        <h1 className="text-2xl font-bold ">{animeTitle}</h1>
+                                        <h1 className="text-2xl font-bold ">
+                                            {animeTitle.length !== 0 ? animeTitle : "?????"}
+                                        </h1>
                                         <p className="py-5">
                                             <b> Genre: </b>
                                             {`${genres.join(", ")}`}

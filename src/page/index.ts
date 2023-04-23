@@ -7,6 +7,5 @@ export { default as Home } from "./home/Home";
 export { default as Popular } from "./Popular/Popular";
 export { default as Movie } from "./Movie/Movie";
 export { default as RecentUpdate } from "./RecentUpdate/RecentUpdate";
-export { default as TopAiring } from "./TopAiring/TopAiring";
 export { default as Detais } from "./Details/Details";
 export { default as BookMark } from "./bookmark/BookMark";

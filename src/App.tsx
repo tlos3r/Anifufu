@@ -3,7 +3,19 @@ import { BrowserRouter } from "react-router-dom";
 import { Footer, Header } from "./component";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Home, Login, Genres, Register, Forget, SearchPage, Popular, Movie, RecentUpdate, BookMark } from "./page";
+import {
+    Home,
+    Login,
+    Genres,
+    Register,
+    Forget,
+    SearchPage,
+    Popular,
+    Movie,
+    RecentUpdate,
+    BookMark,
+    NotFound,
+} from "./page";
 import "./App.scss";
 import Details from "./page/Details/Details";
 function App() {
@@ -23,7 +35,6 @@ function App() {
                             </>
                         }
                     />
-
                     <Route
                         path="/genres/:genre"
                         element={
@@ -77,6 +88,14 @@ function App() {
                         element={
                             <>
                                 <Header /> <BookMark />
+                            </>
+                        }
+                    />
+                    <Route
+                        path="/404"
+                        element={
+                            <>
+                                <NotFound />
                             </>
                         }
                     />

@@ -1,8 +1,7 @@
 import axios from "axios";
-
 class Request {
     request = axios.create({
-        baseURL: "https://gogoanime.consumet.stream/",
+        baseURL: "gogoanime-api-production-c299.up.railway.app/",
     });
 
     async getRecentEpisodes(p?: number, type?: number) {
@@ -16,6 +15,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
+            window.location.href = "/404";
         }
     }
 
@@ -29,6 +29,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
+            window.location.href = "/404";
         }
     }
 
@@ -42,6 +43,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
+            window.location.href = "/404";
         }
     }
 
@@ -55,6 +57,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
+            window.location.href = "/404";
         }
     }
     async getAnimeSearch(keyw: string | undefined) {
@@ -63,6 +66,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
+            window.location.href = "/404";
         }
     }
 
@@ -72,6 +76,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
+            window.location.href = "/404";
         }
     }
 
@@ -86,6 +91,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
+            window.location.href = "/404";
         }
     }
 }

@@ -92,7 +92,7 @@ function App() {
                         }
                     />
                     <Route
-                        path="/404"
+                        path="/404notfound"
                         element={
                             <>
                                 <NotFound />

@@ -15,7 +15,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404";
+            window.location.href = "/404notfound";
         }
     }
 
@@ -29,7 +29,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404";
+            window.location.href = "/404notfound";
         }
     }
 
@@ -43,7 +43,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404";
+            window.location.href = "/404notfound";
         }
     }
 
@@ -57,7 +57,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404";
+            window.location.href = "/404notfound";
         }
     }
     async getAnimeSearch(keyw: string | undefined) {
@@ -66,7 +66,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404";
+            window.location.href = "/404notfound";
         }
     }
 
@@ -76,7 +76,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404";
+            window.location.href = "/404notfound";
         }
     }
 
@@ -91,7 +91,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404";
+            window.location.href = "/404notfound";
         }
     }
 }

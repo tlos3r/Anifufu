@@ -8,11 +8,10 @@ const NotFound = () => {
                     <img src={notFoundGif} alt="404 not found" />
                 </div>
                 <p className="text-center text-xl py-5">
-                    There was an error while loading the content. Please try again later or contact our support team if
-                    the problem persists.
+                    There was an error while loading the content. Please try again later
                 </p>
                 <p className="text-center text-xl py-3">
-                    You can watch demo from{" "}
+                    You can watch demo website from{" "}
                     <a
                         className="font-bold underline"
                         href="https://wph25-my.sharepoint.com/:v:/g/personal/fu_wph25_onmicrosoft_com/EWZqpzbsuvVIjJ_xpBx5LMQBHdbunb_I4fNeGmGP6I8xZw?e=siofoB"

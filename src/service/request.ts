@@ -1,7 +1,7 @@
 import axios from "axios";
 class Request {
     request = axios.create({
-        baseURL: "gogoanime.consumet.stream/",
+        baseURL: "https://webdis-vdym.onrender.com/",
     });
 
     async getRecentEpisodes(p?: number, type?: number) {

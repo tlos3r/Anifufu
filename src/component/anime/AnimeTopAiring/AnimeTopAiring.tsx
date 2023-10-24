@@ -5,6 +5,7 @@ import LoaderImg from "../../../assets/Spinner-1s-267px.gif";
 import { shortenText } from "../../../genreList";
 import { Link } from "react-router-dom";
 import SkeletonLoading from "../../loader/SkeletonLoading";
+
 function AnimeTopAiring() {
     const [listTopAiring, setListTopAiring] = useState<Anime[]>([]);
     const [isLoading, setIsLoading] = useState(false);

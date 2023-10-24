@@ -15,6 +15,7 @@ import {
     RecentUpdate,
     BookMark,
     NotFound,
+    Watch,
 } from "./page";
 import "./App.scss";
 import Details from "./page/Details/Details";
@@ -88,6 +89,14 @@ function App() {
                         element={
                             <>
                                 <Header /> <BookMark />
+                            </>
+                        }
+                    />
+                    <Route
+                        path="/watch/:animeId"
+                        element={
+                            <>
+                                <Header /> <Watch />
                             </>
                         }
                     />

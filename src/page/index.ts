@@ -9,4 +9,5 @@ export { default as Movie } from "./Movie/Movie";
 export { default as RecentUpdate } from "./RecentUpdate/RecentUpdate";
 export { default as Detais } from "./Details/Details";
 export { default as BookMark } from "./bookmark/BookMark";
+export { default as Watch } from "./Watch/Watch";
 export { default as NotFound } from "./404NotFound/NotFound";

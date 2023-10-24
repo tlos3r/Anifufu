@@ -23,5 +23,11 @@ export interface AnimeDetails {
     status: string;
     totalEpisodes: string;
     type: string;
-    episodesList: any;
+    episodesList: { episodeId: string; episodeNum: string; episodeUrl: string }[];
+}
+
+export interface VideoStreamResponse {
+    Referer: string;
+    sources: { file: string; label: string; type: string }[];
+    sources_bk: { file: string; label: string; type: string }[];
 }

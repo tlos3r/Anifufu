@@ -8,7 +8,8 @@ import { selectIsLoggedIn } from "../../redux/slice/authSlice";
 import { ADD_BOOKMARK } from "../../redux/slice/bookMarkSlice";
 import { Confirm } from "notiflix";
 import SkeletonLoading from "../../component/loader/SkeletonLoading";
-
+import { toast } from "react-toastify";
+import { SET_DETAIL } from "../../redux/slice/animeDetailSlice";
 function Details(): JSX.Element {
     const isLoggedIn = useSelector(selectIsLoggedIn);
     const nagivate = useNavigate();
@@ -22,9 +23,18 @@ function Details(): JSX.Element {
     }, [animeId]);
     const getAnimeDetails = async () => {
         setIsLoading(true);
-        const getListDetails = await request.getAnimeDetails(animeId);
-        setDetails(getListDetails);
-        setIsLoading(false);
+        try {
+            const getListDetails = await request.getAnimeDetails(animeId);
+            setDetails(getListDetails);
+            dispatch(SET_DETAIL({ animeTitle: getListDetails.animeTitle, episodesList: getListDetails.episodesList }));
+            setIsLoading(false);
+        } catch (error) {
+            setIsLoading(false);
+            let message;
+            if (error instanceof Error) message = error.message;
+            else message = String(error);
+            toast.error(message);
+        }
     };
     const bookMarkAnime = () => {
         isLoggedIn ? dispatch(ADD_BOOKMARK({ details, animeId })) : showModalLogin();
@@ -118,18 +128,16 @@ function Details(): JSX.Element {
 
                             <div className="flex flex-wrap w-full h-24 overflow-y-auto ">
                                 {details.episodesList
-                                    ? details.episodesList.map((episode: any) => {
-                                          const { episodeId, episodeNum, episodeUrl } = episode;
+                                    ? details.episodesList.map((episode: { episodeId: string; episodeNum: string }) => {
+                                          const { episodeId, episodeNum } = episode;
                                           return (
-                                              <>
-                                                  <Link
-                                                      key={episodeId}
-                                                      to={episodeUrl}
-                                                      className="m-2 p-3 w-14 text-sm bg-[#AD241B] hover:bg-[#ad4b44] text-center h-fit rounded-md"
-                                                  >
-                                                      {episodeNum}
-                                                  </Link>
-                                              </>
+                                              <Link
+                                                  key={episodeId}
+                                                  to={`/watch/${episodeId}`}
+                                                  className="m-2 p-3 w-14 text-sm bg-[#AD241B] hover:bg-[#ad4b44] text-center h-fit rounded-md"
+                                              >
+                                                  {episodeNum}
+                                              </Link>
                                           );
                                       })
                                     : ""}

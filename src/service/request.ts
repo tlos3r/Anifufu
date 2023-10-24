@@ -90,8 +90,17 @@ class Request {
             });
             return response.data;
         } catch (error) {
-            console.error(error);
             window.location.href = "/404notfound";
+            console.error(error);
+        }
+    }
+
+    async getAnimeStreaming(sever: string, id: string | undefined) {
+        try {
+            const response = await this.request.get(`${sever}/watch/${id}`);
+            return response.data;
+        } catch (error) {
+            console.error(error);
         }
     }
 }

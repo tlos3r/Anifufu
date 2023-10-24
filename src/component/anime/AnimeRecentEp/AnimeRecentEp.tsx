@@ -52,7 +52,7 @@ function AnimeRecentEp() {
                                     <p className="p-2 text-sm ">Ep: {episodeNum}</p>
                                 </div>
                                 <div className="absolute top-0 z-[2] w-full h-full flex justify-center items-center bg-[#2f2c2c99] transition-opacity delay-100 opacity-0 hover:opacity-100">
-                                    <Link to={episodeUrl} target="_blank">
+                                    <Link to={`/details/${animeId}`}>
                                         <AiOutlinePlayCircle size={60} color="white" />
                                     </Link>
                                 </div>

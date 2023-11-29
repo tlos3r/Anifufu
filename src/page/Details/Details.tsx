@@ -105,7 +105,8 @@ function Details(): JSX.Element {
                                 <b className="text-4xl ">{details.animeTitle}</b>
                             </p>
                             <p className="mb-10">{details.otherNames && `Other name : ${details.otherNames}`}</p>
-                            <p>{details.synopsis}</p>
+
+                            <p className="mb-5 h-36 overflow-y-scroll">{details.synopsis}</p>
 
                             <p>
                                 <b>Genres:</b>

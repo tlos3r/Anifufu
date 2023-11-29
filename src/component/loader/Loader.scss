@@ -6,7 +6,14 @@
         radial-gradient(circle closest-side at right 6px top 50%, currentColor 90%, #0000);
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    -webkit-animation: d4 1s infinite alternate;
     animation: d4 1s infinite alternate;
+}
+@-webkit-keyframes d4 {
+    to {
+        width: 25px;
+        aspect-ratio: 1;
+    }
 }
 @keyframes d4 {
     to {
@@ -21,7 +28,14 @@
     background-size: 40px 100%;
     background-repeat: no-repeat;
     background-position: left -40px top 0;
+    -webkit-animation: shine 1s ease infinite;
     animation: shine 1s ease infinite;
+}
+
+@-webkit-keyframes shine {
+    to {
+        background-position: right -40px top 0;
+    }
 }
 
 @keyframes shine {

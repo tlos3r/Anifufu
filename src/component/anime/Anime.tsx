@@ -7,9 +7,7 @@ function Anime() {
     return (
         <section className="container flex flex-col justify-between sm:justify-center sm:flex-col md:flex-row ">
             <div className="w-3/4">
-                <AnimePopular />
                 <AnimeRecentEp />
-                <AnimeMovie />
             </div>
             <div className="w-1/4">
                 <AnimeTopAiring />

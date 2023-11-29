@@ -10,7 +10,7 @@ function AnimeRecentEp() {
     const [listAnimeRecentEp, setListAnimeRecentEp] = useState<Anime[]>([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    const shortListAnimeRecentEp = listAnimeRecentEp.slice(0, 8);
+    // const shortListAnimeRecentEp = listAnimeRecentEp.slice(0, 8);
     useEffect(() => {
         getAnimeRecentEpisode();
     }, []);
@@ -37,8 +37,8 @@ function AnimeRecentEp() {
                             );
                         })}
                 {listAnimeRecentEp &&
-                    shortListAnimeRecentEp.map((listAnime) => {
-                        const { animeId, animeTitle, episodeUrl, episodeNum, animeImg } = listAnime;
+                    listAnimeRecentEp.map((listAnime) => {
+                        const { animeId, animeTitle, episodeNum, animeImg } = listAnime;
                         return (
                             <div
                                 key={animeId}

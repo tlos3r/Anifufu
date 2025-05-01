@@ -1,12 +1,12 @@
 import axios from "axios";
 class Request {
     request = axios.create({
-        baseURL: "https://webdis-vdym.onrender.com/",
+        baseURL: "https://private-repository-five.vercel.app/anime/zoro/",
     });
 
     async getRecentEpisodes(p?: number, type?: number) {
         try {
-            const response = await this.request.get("recent-release", {
+            const response = await this.request.get("recent-episodes", {
                 params: {
                     page: p,
                     type,
@@ -15,7 +15,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404notfound";
+            // window.location.href = "/404notfound";
         }
     }
 
@@ -29,7 +29,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404notfound";
+            // window.location.href = "/404notfound";
         }
     }
 
@@ -43,7 +43,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404notfound";
+            // window.location.href = "/404notfound";
         }
     }
 
@@ -57,7 +57,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404notfound";
+            // window.location.href = "/404notfound";
         }
     }
     async getAnimeSearch(keyw: string | undefined) {
@@ -66,7 +66,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404notfound";
+            // window.location.href = "/404notfound";
         }
     }
 
@@ -76,7 +76,7 @@ class Request {
             return response.data;
         } catch (error) {
             console.error(error);
-            window.location.href = "/404notfound";
+            // window.location.href = "/404notfound";
         }
     }
 
@@ -90,7 +90,7 @@ class Request {
             });
             return response.data;
         } catch (error) {
-            window.location.href = "/404notfound";
+            // window.location.href = "/404notfound";
             console.error(error);
         }
     }

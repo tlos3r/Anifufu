@@ -5,7 +5,7 @@ import AnimeTopAiring from "./AnimeTopAiring/AnimeTopAiring";
 
 function Anime() {
     return (
-        <section className="container flex flex-col justify-between sm:justify-center sm:flex-col md:flex-row ">
+        <section className="container flex flex-col justify-between sm:justify-center sm:flex-col md:flex-row mt-0 md:mt-24">
             <div className="w-3/4">
                 <AnimeRecentEp />
             </div>
